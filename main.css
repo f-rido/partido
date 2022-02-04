@@ -152,7 +152,7 @@ html {
 /* タイトル */
 
 #main_visual {
-    background-image: url("../img/main.jpg");
+    background-image: url("main.jpg");
     background-size: cover;
     height: 250px;
     color: white;
@@ -236,7 +236,7 @@ html {
 
 /* コンセプト */
 #concept_container {
-    background-image: url("../img/football.jpg");
+    background-image: url("football.jpg");
     background-size: cover;
     margin-top: 50px;
 
