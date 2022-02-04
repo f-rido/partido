@@ -111,21 +111,21 @@ Vue.component('opponent', {
       <div id="calendar">
         <a href="../calendar/calendar.html">
         <p>カレンダーから探す</p>
-        <img src="../img/calendar.jpg" alt="カレンダー">
+        <img src="calendar.jpg" alt="カレンダー">
         </a>
       </div>
       
       <div id="recruitment">
         <a href="../list/list.html">
         <p>募集一覧</p>
-        <img src="../img/bosyu.jpg" alt="募集">
+        <img src="bosyu.jpg" alt="募集">
         </a>
       </div>
       
       <div id="team_list">
        <a href="../entry_team/entry_team.html">
         <p>登録チームから探す</p>
-        <img src="../img/touroku.jpg" alt="チーム">
+        <img src="touroku.jpg" alt="チーム">
        </a>
       </div>
     </div>
