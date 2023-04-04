@@ -1,7 +1,4 @@
-$(window).bind("load", function () {
-  if (document.URL.match("/index")) {
-    // URLがマッチした場合の処理
-    //テキストのカウントアップ+バーの設定
+//テキストのカウントアップ+バーの設定
 var bar = new ProgressBar.Line(splash_text, {//id名を指定
   easing: 'easeInOut',//アニメーション効果linear、easeIn、easeOut、easeInOutが指定可能
   duration: 1000,//時間指定(1000＝1秒)
@@ -33,8 +30,6 @@ bar.animate(1.0, function () {//バーを描画する割合を指定します 1.
   $(".loader_cover-up").addClass("coveranime");//カバーが上に上がるクラス追加
   $(".loader_cover-down").addClass("coveranime");//カバーが下に下がるクラス追加
   $("#splash").fadeOut();//#splashエリアをフェードアウト
-});
-  }
 });
 
 
