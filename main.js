@@ -1,7 +1,6 @@
-//トップページのみロードアニメーション
 $(window).bind("load", function () {
   if (document.URL.match("/index")) {
-    // URLがトップページとマッチした場合
+    // URLがマッチした場合の処理
     //テキストのカウントアップ+バーの設定
 var bar = new ProgressBar.Line(splash_text, {//id名を指定
   easing: 'easeInOut',//アニメーション効果linear、easeIn、easeOut、easeInOutが指定可能
