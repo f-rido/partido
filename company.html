@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><!-- viewport レスポンシブ -->
+  <meta name="description" content="サッカー試合マッチングサービス">
+  <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet"><!--FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!--GoogleFonts 共通 -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><!--GoogleFonts 共通 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet"><!--GoogleFonts 使用フォント -->
+  <link rel="stylesheet" href="reset.css"><!-- リセットcss -->
+  <link rel="stylesheet" href="company.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"><!-- スワイパーCDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!-- Animate.css アニメーション-->
+  <title>Paltido-会社概要</title>
+</head>
+<body class="body">
+  <div id="splash">
+    <div id="splash_text"></div>
+    <div class="loader_cover loader_cover-up"></div>
+    <div class="loader_cover loader_cover-down"></div>
+  </div>
+
+  <header class="header">
+    <div class="header-container">
+      <h1 class="header-logo">
+        <a href="index.html">
+          <img src="soccercourt.jpg" alt="logo">
+          <span>Partido</span>
+        </a>
+      </h1>
+      <nav class="globalMenu">
+        <ul>
+          <li><a href="search.html">相手を探す</a></li>
+          <li><a href="recruitment.html">相手を募集する</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="entry.html">会員登録</a></li>
+          <li id="login-show"><a href="#">ログイン</a></li>
+        </ul>
+      </nav>
+    </div><!-- /header-container -->
+  
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="globalMenuSp">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="search.html">相手を探す</a></li>
+        <li><a href="recruitment.html">相手を募集する</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="entry.html">会員登録</a></li>
+        <li  id="login-show-sp"><a href="#">ログイン</a></li>
+      </ul>
+    </nav><!-- /globalMenuSp -->
+  </header><!-- header -->
+    
+      <!-- ログインモーダル -->
+      <div class="login-modal-wrapper" id="login-modal">
+        <div class="modal">
+          <div id="close-modal">
+            <i class="fa fa-2x fa-times"></i>
+          </div>
+          <div id="login-form">
+            <h2>Emailログイン</h2>
+            <form action="#">
+              <input class="form-control" type="text" value="" placeholder="メールアドレス">
+              <input class="form-control" type="password" placeholder="パスワード">
+              <div id="submit-btn">ログイン</div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <section class="sec-company">
+        <div class="company_container">
+          <h2 class="company-title">
+            <span>Company</span>
+            <i class="far fa-building building"></i>
+            会社概要
+          </h2>
+          <table class="table table-bordered">
+              <tbody>
+                  <tr>
+                      <th scope="row" class="table-th th-1st-radius">会社名</th>
+                      <td class="table-td td-1st-radius">株式会社Partido</td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="table-th">代表</th>
+                      <td class="table-td">ポール・ケリー</td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="table-th">設立</th>
+                      <td class="table-td">2021年8月19日</td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="table-th">事業内容</th>
+                      <td class="table-td">サッカーコンテンツの企画</td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="table-th">所在地</th>
+                      <td class="table-td">〒105-0000<br>東京都港区港町1-1-1</td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="table-th">地図</th>
+                      <td class="table-td">
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.3091301644522!2d139.74265710821638!3d35.637136274945895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188a4dbb7db575%3A0x81ccacac30e44bbf!2z44CSMTA4LTAwNzUg5p2x5Lqs6YO95riv5Yy65riv5Y2X77yR5LiB55uu77yR!5e0!3m2!1sja!2sjp!4v1629424749876!5m2!1sja!2sjp" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="table-th">電話</th>
+                      <td class="table-td">03-5555-5555</td>
+                  </tr>
+                  <tr>
+                      <th scope="row" class="table-th th-last-radius">FAX</th>
+                      <td class="table-td td-last-radius">03-5555-5556</td>
+                  </tr>
+              </tbody>
+          </table>
+        </div><!-- /company_container -->
+        
+        <div class="greeting_container">
+        <div class="greeting-title">
+          <div class="characters">
+            <div class="chara">社</div>
+            <div class="chara">長</div>
+            <div class="chara">挨</div>
+            <div class="chara">拶</div>
+          </div>
+          <figure class="president">
+            <img src="president.jpg" alt="">
+          </figure>
+        </div>
+        <div>
+          <h3 class="message-title">マッチメイクに時間を<br class="sp-br">かけるのはもうやめにしよう</h3>
+          <p class="message-text">
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </p>
+          <p class="president-name">
+            代表取締役社長 ポール・ケリー
+          </p>
+        </div>
+
+
+        </div><!-- /greeting_container -->
+
+      </section>
+ 
+
+    <footer class="footer">
+      <div class="footer_container">
+  
+        <ul class="footer_menu">
+          <li><a href="calendar.html"><i class="fas fa-caret-right"></i>カレンダーから探す</a></li>
+          <li><a href="list.html"><i class="fas fa-caret-right"></i>募集一覧から探す</a></li>
+          <li><a href="entry_team.html"><i class="fas fa-caret-right"></i>登録チームから探す</a></li>
+        </ul>
+  
+        <ul class="footer_menu">
+          <li><a href="step.html"><i class="fas fa-caret-right"></i>ご利用のステップ</a></li>
+          <li><a href="entry.html"><i class="fas fa-caret-right"></i>会員登録</a></li>
+          <li><a href="concept.html"><i class="fas fa-caret-right"></i>コンセプト</a></li>
+        </ul>
+  
+        <ul class="footer_menu">
+          <li><a href="rules.html"><i class="fas fa-caret-right"></i>利用規約</a></li>
+          <li><a href="question.html"><i class="fas fa-caret-right"></i>よくある質問</a></li>
+          <li><a href="contact.html"><i class="fas fa-caret-right"></i>お問い合わせ</a></li>
+        </ul>
+  
+        <ul class="company">
+          <li class="company_name">Partido株式会社</li>
+          <li>〒105-0000</li>
+          <li>東京都港区港町1-1-1</li>
+          <li>TEL 03-5555-5555</li>
+          <li>FAX 03-5555-5556</li>
+          <li>
+            <a href=""><i class="fas fa-envelope footer_icon sns"></i></a>
+            <a href=""><i class="fab fa-twitter-square footer_icon sns"></i></a>
+            <a href=""><i class="fab fa-facebook-square footer_icon sns"></i></a>
+          </li>
+        </ul>
+      </div>
+      <p>© 2023 Partido inc.</p>
+    </footer>
+  
+      
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+  <!-- jQuery jsファイル -->
+  <script src="main.js"></script>
+  </body>
+  
+  </html>

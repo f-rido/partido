@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"><!-- viewport レスポンシブ -->
+  <meta name="description" content="サッカー試合マッチングサービス">
+  <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet"><!--FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!--GoogleFonts 共通 -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><!--GoogleFonts 共通 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet"><!--GoogleFonts 使用フォント -->
+  <link rel="stylesheet" href="reset.css"><!-- リセットcss -->
+  <link rel="stylesheet" href="recruitment.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"><!-- スワイパーCDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!-- Animate.css アニメーション-->
+  <title>Paltido-相手を募集する</title>
+</head>
+<body class="body">
+  <div id="splash">
+    <div id="splash_text"></div>
+    <div class="loader_cover loader_cover-up"></div>
+    <div class="loader_cover loader_cover-down"></div>
+  </div>
+
+  <header class="header">
+    <div class="header-container">
+      <h1 class="header-logo">
+        <a href="index.html">
+          <img src="soccercourt.jpg" alt="logo">
+          <span>Partido</span>
+        </a>
+      </h1>
+      <nav class="globalMenu">
+        <ul>
+          <li><a href="search.html">相手を探す</a></li>
+          <li><a href="recruitment.html">相手を募集する</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="entry.html">会員登録</a></li>
+          <li id="login-show"><a href="#">ログイン</a></li>
+        </ul>
+      </nav>
+    </div><!-- /header-container -->
+  
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="globalMenuSp">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="search.html">相手を探す</a></li>
+        <li><a href="recruitment.html">相手を募集する</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="entry.html">会員登録</a></li>
+        <li  id="login-show-sp"><a href="#">ログイン</a></li>
+      </ul>
+    </nav><!-- /globalMenuSp -->
+  </header><!-- header -->
+
+  <!-- ログインモーダル -->
+  <div class="login-modal-wrapper" id="login-modal">
+    <div class="modal">
+      <div id="close-modal">
+        <i class="fa fa-2x fa-times"></i>
+      </div>
+      <div id="login-form">
+        <h2>Emailログイン</h2>
+        <form action="#">
+          <input class="form-control" type="text" value="" placeholder="メールアドレス">
+          <input class="form-control" type="password" placeholder="パスワード">
+          <div id="submit-btn">ログイン</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <section class="recruitment">
+    <div class="recruitment-container">
+      <h2 class="recruitment-title">
+        <span>Recruit</span>
+        <i class="fas fa-search-plus search"></i>
+        対戦相手を募集する
+      </h2>
+
+    <form class="recruitment_form">
+      <div class="form-group">
+        <label for="teamName" class="label">チーム名/学校名</label>
+        <input type="text" class="input" required id="teamName">
+      </div>
+    
+      <div class="form-group">
+        <label for="teamName" class="label">代表者名</label>
+        <input type="text" class="input" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="teamName" class="label">フリガナ</label>
+        <input type="text" class="input" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="teamName" class="label">メールアドレス</label>
+        <input type="text" class="input" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="teamName" class="label">電話番号</label>
+        <input type="text" class="input" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="teamName" class="label">カテゴリー</label>
+        <input type="text" class="input" placeholder="社会人、学年など">
+      </div>
+    
+      <div class="form-group">
+        <label for="teamName" class="label match-label">
+          試合形式
+          <span class="match-note">
+            ※クリックすると試合形式を選択できます。
+          </span>
+        </label>
+        <select name="match" class="select">
+          <option value="">試合形式の選択</option>
+          <option value="">サッカー11人制</option>
+          <option value="">サッカー8人制</option>
+          <option value="">フットサル</option>
+        </select>
+      </div><!-- form-group -->
+    
+    
+      <div class="form-group">
+        <label for="teamName" class="label">
+          日程
+        </label>
+        <input type="date" class="input match-day" name="match-day">
+        <label for="teamName" class="label">
+          時間
+        </label>
+        <input type="time" class="input match-day" name="予定の時刻" value="">
+      </div><!-- form-group -->
+    
+      <div class="form-group">
+        <label for="teamName" class="label">
+          試合会場
+        </label>
+        <div class="form-check">
+          <input class="radio" type="radio" name="flexRadioDefault" id="invite" checked>
+          <label class="radio-label" for="invite">
+            招待
+          </label>
+        </div>
+        <input type="text" class="input" placeholder="住所">
+        <select class="select" aria-label="Default select example">
+          <option selected>スパイク可／不可</option>
+          <option value="1">スパイク可</option>
+          <option value="2">スパイク不可</option>
+        </select>
+    
+        <select class="select" aria-label="Default select example">
+          <option selected>駐車場 有／無</option>
+          <option value="1">駐車場 有</option>
+          <option value="2">駐車場 無</option>
+        </select>
+   
+        <div class="form-check">
+          <input class="radio" type="radio" name="flexRadioDefault" id="expedition" checked>
+          <label class="radio-label" for="expedition">
+            遠征希望
+          </label>
+        </div>
+        <textarea class="textarea" placeholder="備考・連絡事項"></textarea>
+      </div><!-- form-group -->
+
+      <button class="recruit-entry" onclick="location.href='entry.html'" tabindex="1"
+    accesskey="t">
+    登録する
+  </button>
+    </form><!-- recruitment_form -->
+  </div><!-- /recruiement-cintainer -->
+  </section><!-- /recruiement -->
+    
+  <footer class="footer">
+    <div class="footer_container">
+
+      <ul class="footer_menu">
+        <li><a href="calendar.html"><i class="fas fa-caret-right"></i>カレンダーから探す</a></li>
+        <li><a href="list.html"><i class="fas fa-caret-right"></i>募集一覧から探す</a></li>
+        <li><a href="entry_team.html"><i class="fas fa-caret-right"></i>登録チームから探す</a></li>
+      </ul>
+
+      <ul class="footer_menu">
+        <li><a href="step.html"><i class="fas fa-caret-right"></i>ご利用のステップ</a></li>
+        <li><a href="entry.html"><i class="fas fa-caret-right"></i>会員登録</a></li>
+        <li><a href="concept.html"><i class="fas fa-caret-right"></i>コンセプト</a></li>
+      </ul>
+
+      <ul class="footer_menu">
+        <li><a href="rules.html"><i class="fas fa-caret-right"></i>利用規約</a></li>
+        <li><a href="question.html"><i class="fas fa-caret-right"></i>よくある質問</a></li>
+        <li><a href="contact.html"><i class="fas fa-caret-right"></i>お問い合わせ</a></li>
+      </ul>
+
+      <ul class="company">
+        <li class="company_name">Partido株式会社</li>
+        <li>〒105-0000</li>
+        <li>東京都港区港町1-1-1</li>
+        <li>TEL 03-5555-5555</li>
+        <li>FAX 03-5555-5556</li>
+        <li>
+          <a href=""><i class="fas fa-envelope footer_icon sns"></i></a>
+          <a href=""><i class="fab fa-twitter-square footer_icon sns"></i></a>
+          <a href=""><i class="fab fa-facebook-square footer_icon sns"></i></a>
+        </li>
+      </ul>
+    </div>
+    <p>© 2023 Partido inc.</p>
+  </footer>
+
+    
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+<!-- jQuery jsファイル -->
+<script src="main.js"></script>
+</body>
+
+</html>

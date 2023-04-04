@@ -1,0 +1,594 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
+/* SP width=767px以下 */
+ $mb: 767px;/*(画面サイズによりpx数値を変える)*/
+@mixin mobile {
+  @media screen and (max-width:$mb){
+    @content;
+  }
+}
+
+/* tb width=768 ～ 1023px */
+@mixin tablet {
+  @media screen and (max-width: 1023px) and (min-width: 768px){
+    @content;
+  }
+}
+
+/* 要素に記載するコード */
+// @include mobile(tablet){
+//   cssの内容;
+// }
+
+// 画像width-100%
+img {
+  max-width: 100%;
+}
+
+/* スマホ時の改行 非表示*/
+.sp-br{
+  display: none;
+}
+
+/* 1rem=1rem */
+/* 単位 はremを使用 */
+html { 
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 164px; //ヘッダーの高さ
+  @include tablet{
+    font-size: 1vw;
+  }
+  @include mobile{
+    font-size: calc(10 / 375 * 100vw);
+  }
+
+  .body{
+    font-family: 'Noto Sans JP';
+
+    // header
+    .header{
+      position: fixed;
+        width: 100%;
+        z-index: 100;
+        transition: all .5s;
+        background-color: rgba(42, 138, 157, 0.9);
+        @include tablet {
+          background-color: rgba(80, 49, 216, 0.9);
+        }
+        @include mobile {
+          background-color: rgba(255, 154, 66, 0.9);
+        }
+      
+        .header-container{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 112rem;
+          width: 100%;
+          margin: 0 auto;
+          padding: 2.4rem 1.6rem ;
+          @include mobile(){
+            padding: 1rem 1.6rem ;
+          }
+          
+          .header-logo{
+            text-align: center;
+            transition-duration: 0.3s;
+            &:hover{
+              opacity: 0.7;
+              transition-duration: 0.3s;
+            }
+
+            a{
+              text-decoration: none;
+
+              img{
+                width: 10rem;
+                height: 5rem;
+                @include mobile{
+                  width: 5rem;
+                  height: 2.5rem;
+                }
+              }
+
+              span{
+                display: block;
+                font-size: 2.4rem;
+                color:white;
+                text-shadow:  0.2rem  0.2rem 1rem #777 ,
+                              -0.2rem  0.2rem 1rem #777 ,
+                                0.2rem -0.2rem 1rem #777 ,
+                              -0.2rem -0.2rem 1rem #777;
+                @include mobile{
+                  font-size: 1.6rem;
+                }
+                } // p
+                } // a
+          } // header-logo
+
+          .globalMenu{
+            @include mobile{
+              display: none;
+            }
+
+            ul{
+              display: flex;
+              gap: 3.2rem;
+              
+              li{
+                list-style: none;
+                text-shadow:  0.2rem  0.2rem 1rem #777 ,
+                            -0.2rem  0.2rem 1rem #777 ,
+                              0.2rem -0.2rem 1rem #777 ,
+                            -0.2rem -0.2rem 1rem #777;
+                
+                a{
+                  font-size: 1.8rem;
+                  text-decoration: none;
+                  position: relative;
+                  display: inline-block;
+                  text-decoration: none;
+                  color: white;
+                    &:after {
+                      position: absolute;
+                      bottom: -0.4rem;
+                      left: 0;
+                      content: '';
+                      width: 100%;
+                      height: 0.2rem;
+                      background: white;;
+                      transform: scale(0, 1);
+                      transform-origin: center top;
+                      transition: transform .3s;
+                    }
+                    
+                      &:hover::after {
+                      transform: scale(1, 1);
+                    }
+                  }
+                }//a
+              }//li
+            }//ul
+          }// globalMenu
+    
+  /*　ハンバーガーメニュー　*/
+  .hamburger {
+    display: none; /*768px以上非表示　*/
+
+    @include mobile{ /*767px以下表示　*/
+    display : block;
+    position: fixed;
+    z-index : 3;
+    right : 1.3rem;
+    top   : 1.2rem;
+    width : 4.2rem;
+    height: 4.2rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 0rem;
+    background-color: darkgray;
+    }
+  }
+  .hamburger span {
+    display : block;
+    position: absolute;
+    width   : 3rem;
+    height  : 0.4rem ;
+    left    : 0.6rem;
+    background : white;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+  }
+  .hamburger span:nth-child(1) {
+    top: 1rem;
+  }
+  .hamburger span:nth-child(2) {
+    top: 2rem;
+  }
+  .hamburger span:nth-child(3) {
+    top: 3rem;
+  }
+
+  /* ナビ開いてる時のボタン */
+  .hamburger.active span:nth-child(1) {
+    top : 1.6rem;
+    left: 0.6rem;
+    background :#fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+  }
+
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+    top: 1.6rem;
+    background :#fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+  }
+
+  nav.globalMenuSp {
+    display: none; /*600px以上非表示　*/
+    @include mobile{
+    display: none;
+    position: fixed;
+    z-index : 2;
+    top  : -100;
+    left : 0;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    width: 100%;
+    transition-duration: 0.3s;
+    }
+  }
+
+  nav.globalMenuSp ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    transition: .4s all;
+  }
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+  }
+  nav.globalMenuSp ul li:hover{
+    background :#ddd;
+  }
+
+  nav.globalMenuSp ul li a {
+    display: block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration :none;
+    @include mobile{
+      font-size: 1.8rem;
+    }
+  }
+
+  // spメニューをふわっと表示 アニメーション設定
+  @keyframes tooltipShow {
+    from {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    display: block;
+     // spメニューをふわっと表示
+    animation: tooltipShow 0.3s linear 0s;
+  }
+  /*　ハンバーガーメニュー ここまで　*/
+    } /*header　*/
+
+     /*ログインモーダル*/
+     .login-modal-wrapper {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      display: none;
+
+      .modal {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #e6ecf0;
+        padding: 2rem 0 4rem;
+        border-radius: 1rem;
+        width: 45rem;
+        height: auto;
+        text-align: center;
+        @include mobile{
+          width: 32rem;
+          left: 0;
+          right: 0;
+          margin: auto;
+          }
+
+        .fa-times {
+          position: absolute;
+          top: 1.2rem;
+          right: 1.2rem;
+          color: rgba(128, 128, 128, 0.46);
+          cursor: pointer;
+        }
+
+        #login-form h2{
+          font-size: 1.5rem;
+          margin: 0 0 1rem 0;
+        }
+
+        #login-form input {
+          width: 32rem;
+          margin-bottom: 2rem;
+          font-size: 1.5rem;
+          padding: 1.2rem 1.2rem;
+          border: 0.1rem solid #d0d5d8;
+          border-radius: 0.5rem;
+          @include mobile{
+            width: 30rem;
+            }
+        }
+        #submit-btn {
+          display: inline-block;
+          padding: 1.4rem 14rem;
+          background-color: #5dca88;
+          border: none;
+          border-radius: 0.3rem;
+          color: white;
+          margin: 1rem auto;
+          cursor: pointer;
+          @include mobile{
+            width: 30rem;
+            padding: 1.4rem 0rem;
+            font-size: 1.4rem;
+            }
+        }
+      } //modal
+    }  //login-modal-wrapper
+
+    .recruitment{
+      width: 100%;
+      background: rgb(240,240,251);
+      background: linear-gradient(90deg, rgba(240,240,251,1) 0%, rgba(203,255,253,1) 65%, rgba(145,255,254,1) 100%);
+
+      .recruitment-container{
+        margin: 0 auto;
+        padding: 22rem 1.6rem 8rem;
+        max-width: 58rem;
+        @include mobile{
+          padding: 10rem 1.6rem 4rem;
+          }
+
+          .recruitment-title {
+            font-size: 2.6rem;
+            text-align: center;
+            margin: 0 0 4rem 0;
+            span {
+              display: flex;
+              justify-content: center;
+              padding: 0 14rem 0 0;
+              align-items: center;
+              color: #498ee0;
+              font-size: 1.8rem;
+              text-transform: uppercase;
+              &::before {
+                content: '';
+                display: inline-block;
+                margin-right: 2rem;
+                width: 4rem;
+                height: 0.1rem;
+                background-color: #498ee0;
+              }//before
+            }//span
+
+            .search{
+              margin: 0 0.6rem 0 0;
+            }
+          }//recruitment-title
+
+          .label{
+            display: block;
+            font-size: 1.6rem;
+            height: 3rem;
+            font-size: 2rem;
+
+            .match-note{
+              display: inline-block;
+              font-size: 1.4rem;
+              padding: 0 0 0 1rem;
+            }
+          }//label
+
+          .match-label{
+            @include mobile{
+              margin: 0rem 0rem 3rem 0rem;
+              }
+          }
+
+          .input{
+            display: block;
+            background-color: #fff;
+            width: 100%;
+            height: 4rem;
+            border: 0.1rem solid #636363;
+            border-radius: 0.2rem;
+            margin: 0 0 2rem 0;
+            padding: 0 1rem;
+            font-size: 1.8rem;
+          }//input
+
+          .select{
+            display: inline-block;
+            background-color: #fff;
+            width: 18rem;
+            height: 3rem;
+            font-size: 1.8rem;
+            border: 0.1rem solid #636363;
+            border-radius: 0.2rem;
+            margin: 0 1rem 2rem 0;
+            padding: 0 1rem;
+          }//select
+
+          .match-day{
+            width: 18rem;
+          }
+
+          .form-check{
+            display: flex;
+            align-items: center;
+            gap:1rem;
+            margin: 0 0 1rem 0;
+
+            .radio{
+              display: block;
+            }//radio
+
+            .radio-label{
+              display: block;
+              font-size: 1.8rem;
+            }//radio-label
+          }//form-check
+
+          .textarea{
+            display: block;
+            background-color: #fff;
+            width: 100%;
+            height: 10rem;
+            border: 0.1rem solid #636363;
+            border-radius: 0.2rem;
+            margin: 0 0 6rem 0;
+            padding: 0 1rem;
+            font-size: 1.8rem;
+          }//textarea
+
+          /* 登録ボタン*/
+          .recruit-entry {
+            max-width: 30rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.8rem 0;
+            box-shadow: 0.5rem 0.5rem 0.6rem #707271;
+            color: #333;
+            font-size: 2rem;
+            letter-spacing: 0.5rem;
+            font-weight: bold;
+            background: #ffffff;
+            text-align: center;
+            border: 0.2rem solid #333;
+            position: relative;
+            z-index: 1;
+            display: block;
+            overflow: hidden;
+            transition: .3s;
+            &::before {
+              content: "";
+              width: 100%;
+              position: absolute;
+              top: 0;
+              right: -0px;
+              z-index: -1;
+              border-right: 0px solid transparent;
+              border-bottom: 6.6rem solid #000080;
+              transform: translateX(-100%);
+              transition: transform ease .2s;
+            }
+            &:hover {
+              color: #fff;
+            }
+            &:hover::before {
+              transform: translateX(0);
+            }
+            @include mobile{
+              max-width: 100%;
+              }
+          }/*登録ボタン ここまで*/
+       
+         }//recruitment-container
+
+    }//recruitment
+
+     
+        // footer
+        .footer{
+          width: 100%;
+          background-color: #42627e;
+          color:white;
+          padding: 4rem 0;
+
+          .footer_container{
+            margin: 0 auto;
+            max-width: 112rem;
+            display: flex;
+            justify-content: space-around;
+            @include mobile{
+              display: block;
+              }
+
+            .footer_menu{
+              @include mobile{
+                display: block;
+                 width:  18rem;
+                 margin: 0 auto;
+                }
+
+                li{
+                  list-style: none;
+                  margin-bottom: 1.8rem;
+
+                    a{
+                      font-size: 1.8rem;
+                      text-decoration: none;
+                      color:white;
+                      transition-duration: 0.3s;
+                      &:hover{
+                        opacity: 0.7;
+                        transition-duration: 0.3s;
+                      }
+
+                        .fas, .fab{
+                          margin-right: 0.8rem;
+                          }
+                      }
+                  }
+              } //.footer_menu
+
+            .company{
+              font-size: 2.4rem;
+                li{
+                  list-style: none;
+                  margin: 0;
+                  @include mobile{
+                    text-align: center;
+                    }
+
+                    .sns{
+                      color: white;
+                      transition-duration: 0.3s;
+                      @include mobile{
+                        font-size: 5.6rem;
+                        margin: 1.6rem;
+                        }
+                      &:hover{
+                        font-size: 2.6rem;
+                        transition-duration: 0.3s;
+                      }
+                    } //sns
+                } //li
+
+                .company_name{
+                  font-weight: bold;
+                }
+              } //company
+            } //#footer_container
+          p{
+            text-align: center;
+          }
+      } /*footer 終わり*/
+
+    }//body
+  }//html
